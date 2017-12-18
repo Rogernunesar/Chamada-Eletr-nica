@@ -49,175 +49,79 @@ public class Chamada extends javax.swing.JInternalFrame {
         alunoList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : alunoQuery.getResultList();
         alunoQuery1 = java.beans.Beans.isDesignTime() ? null : ChamadaEscolarPUEntityManager.createQuery("SELECT a FROM Aluno a");
         alunoList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : alunoQuery1.getResultList();
-        jpnbotoes = new javax.swing.JPanel();
-        jbNovo = new javax.swing.JButton();
-        jbSalvar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
         jtfDataMat = new javax.swing.JPanel();
-        jlbNmatricula = new javax.swing.JLabel();
-        jlbNomeAluno = new javax.swing.JLabel();
-        jtfNmatricula = new javax.swing.JTextField();
         jlbTurma = new javax.swing.JLabel();
-        jtfDatMatricula = new javax.swing.JTextField();
-        jlbMatricula = new javax.swing.JLabel();
-        jlbNmChamada = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jbPesquisaar = new javax.swing.JButton();
-        jpnTabela = new javax.swing.JPanel();
+        jtfData = new javax.swing.JTextField();
+        jlbData = new javax.swing.JLabel();
+        jComboTurma = new javax.swing.JComboBox<>();
+        jjbRelatorio = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jpnTabela1 = new javax.swing.JPanel();
+        jpnbotoes = new javax.swing.JPanel();
+        jbVoltar = new javax.swing.JButton();
+        jbConfirma = new javax.swing.JButton();
+        jbExcluir = new javax.swing.JButton();
+        jbAvançar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextNumAluno = new javax.swing.JTextField();
+        jLabelAlunoSelec = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jCheckPresenc1 = new javax.swing.JCheckBox();
+        jCheckPresenc2 = new javax.swing.JCheckBox();
+        jCheckPresenc3 = new javax.swing.JCheckBox();
+        jCheckPresenc4 = new javax.swing.JCheckBox();
+        jCheckPresenc5 = new javax.swing.JCheckBox();
+        jCheckPresenc6 = new javax.swing.JCheckBox();
+        jLNPresenca = new javax.swing.JLabel();
 
         setBorder(null);
         setClosable(true);
         setTitle("Matrícula");
 
-        jpnbotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jbNovo.setText("Novo");
-        jbNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbNovoActionPerformed(evt);
-            }
-        });
-
-        jbSalvar.setText("Salvar");
-        jbSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSalvarActionPerformed(evt);
-            }
-        });
-
-        jbExcluir.setText("Excluir");
-        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jpnbotoesLayout = new javax.swing.GroupLayout(jpnbotoes);
-        jpnbotoes.setLayout(jpnbotoesLayout);
-        jpnbotoesLayout.setHorizontalGroup(
-            jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnbotoesLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jbNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpnbotoesLayout.setVerticalGroup(
-            jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnbotoesLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbNovo)
-                    .addComponent(jbSalvar)
-                    .addComponent(jbExcluir))
-                .addContainerGap())
-        );
-
         jtfDataMat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jlbNmatricula.setText("Nº Matricula");
+        jlbTurma.setText("Selecionar Turmas");
 
-        jlbNomeAluno.setText("Aluno");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.cod_Matricula}"), jtfNmatricula, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.dataMatricula}"), jtfData, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
-        jlbTurma.setText("Turma");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.dataMatricula}"), jtfDatMatricula, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-
-        jlbMatricula.setText("Data Matricula");
-
-        jlbNmChamada.setText("Nº Chamada");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.num_chamada}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
+        jlbData.setText("Data ");
 
         org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.alunoTabela}");
-        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jComboBox1);
+        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jComboTurma);
         bindingGroup.addBinding(jComboBoxBinding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.aluno}"), jComboBox1, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.aluno}"), jComboTurma, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
         bindingGroup.addBinding(binding);
 
-        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.turmaTabela}");
-        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jComboBox2);
-        bindingGroup.addBinding(jComboBoxBinding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.turma}"), jComboBox2, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
-        bindingGroup.addBinding(binding);
-
-        jbPesquisaar.setText("Pesquisar");
-        jbPesquisaar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbPesquisaarActionPerformed(evt);
-            }
-        });
+        jjbRelatorio.setText("Gerar Relátorio");
 
         javax.swing.GroupLayout jtfDataMatLayout = new javax.swing.GroupLayout(jtfDataMat);
         jtfDataMat.setLayout(jtfDataMatLayout);
         jtfDataMatLayout.setHorizontalGroup(
             jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jtfDataMatLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jtfDataMatLayout.createSequentialGroup()
-                        .addComponent(jlbNmatricula)
-                        .addGap(18, 18, 18)
-                        .addComponent(jtfNmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141)
-                        .addComponent(jlbNmChamada)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jtfDataMatLayout.createSequentialGroup()
-                        .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlbTurma)
-                            .addComponent(jlbNomeAluno))
-                        .addGap(59, 59, 59)
-                        .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, 241, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbPesquisaar))
-                    .addGroup(jtfDataMatLayout.createSequentialGroup()
-                        .addComponent(jlbMatricula)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfDatMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(jlbTurma)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(jlbData)
+                .addGap(18, 18, 18)
+                .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(jjbRelatorio)
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         jtfDataMatLayout.setVerticalGroup(
             jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jtfDataMatLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jlbNmatricula)
-                        .addComponent(jtfNmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jlbNmChamada)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbPesquisaar))
-                    .addComponent(jlbNomeAluno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbTurma)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfDatMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbMatricula))
+                    .addComponent(jComboTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jjbRelatorio)
+                    .addComponent(jlbData))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -244,38 +148,110 @@ public class Chamada extends javax.swing.JInternalFrame {
 
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setText("jButton1");
+        jpnbotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jpnTabelaLayout = new javax.swing.GroupLayout(jpnTabela);
-        jpnTabela.setLayout(jpnTabelaLayout);
-        jpnTabelaLayout.setHorizontalGroup(
-            jpnTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnTabelaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-                .addGap(60, 60, 60))
-            .addGroup(jpnTabelaLayout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jButton1)
+        jbVoltar.setText("Volar");
+        jbVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVoltarActionPerformed(evt);
+            }
+        });
+
+        jbConfirma.setText("Confimar");
+        jbConfirma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConfirmaActionPerformed(evt);
+            }
+        });
+
+        jbExcluir.setText("Cancelar");
+        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirActionPerformed(evt);
+            }
+        });
+
+        jbAvançar.setText("Avançar");
+        jbAvançar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAvançarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Nº");
+
+        jLabelAlunoSelec.setText("Aluno Selecionado ");
+
+        jCheckPresenc1.setIconTextGap(8);
+
+        jLNPresenca.setText("Nº Presença");
+
+        javax.swing.GroupLayout jpnbotoesLayout = new javax.swing.GroupLayout(jpnbotoes);
+        jpnbotoes.setLayout(jpnbotoesLayout);
+        jpnbotoesLayout.setHorizontalGroup(
+            jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnbotoesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextNumAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnbotoesLayout.createSequentialGroup()
+                        .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelAlunoSelec)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpnbotoesLayout.createSequentialGroup()
+                                .addComponent(jCheckPresenc1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckPresenc2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckPresenc3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckPresenc4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckPresenc5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckPresenc6))
+                            .addComponent(jLNPresenca)))
+                    .addGroup(jpnbotoesLayout.createSequentialGroup()
+                        .addComponent(jbVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbAvançar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jpnTabelaLayout.setVerticalGroup(
-            jpnTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnTabelaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(32, 32, 32))
-        );
-
-        javax.swing.GroupLayout jpnTabela1Layout = new javax.swing.GroupLayout(jpnTabela1);
-        jpnTabela1.setLayout(jpnTabela1Layout);
-        jpnTabela1Layout.setHorizontalGroup(
-            jpnTabela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpnTabela1Layout.setVerticalGroup(
-            jpnTabela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 173, Short.MAX_VALUE)
+        jpnbotoesLayout.setVerticalGroup(
+            jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnbotoesLayout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabelAlunoSelec)
+                    .addComponent(jLNPresenca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextNumAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCheckPresenc1)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckPresenc3)
+                    .addComponent(jCheckPresenc4)
+                    .addComponent(jCheckPresenc5)
+                    .addComponent(jCheckPresenc6)
+                    .addComponent(jCheckPresenc2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbConfirma)
+                    .addComponent(jbVoltar)
+                    .addComponent(jbAvançar)
+                    .addComponent(jbExcluir))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -285,27 +261,21 @@ public class Chamada extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpnTabela1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jpnTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jpnbotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtfDataMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jtfDataMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jpnbotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jpnbotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
                 .addComponent(jtfDataMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnTabela1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpnbotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -313,11 +283,11 @@ public class Chamada extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
+    private void jbVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVoltarActionPerformed
         matriculaControl.novo();
-    }//GEN-LAST:event_jbNovoActionPerformed
+    }//GEN-LAST:event_jbVoltarActionPerformed
 
-    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
+    private void jbConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConfirmaActionPerformed
                  
         try{
         matriculaControl.salvar();
@@ -331,7 +301,7 @@ public class Chamada extends javax.swing.JInternalFrame {
                    "Falha de Validaçã", 
                    JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jbSalvarActionPerformed
+    }//GEN-LAST:event_jbConfirmaActionPerformed
 
     private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
         if(JOptionPane.showConfirmDialog(this, "Deseja excluir o cleinte?",
@@ -344,9 +314,9 @@ public class Chamada extends javax.swing.JInternalFrame {
         }   
     }//GEN-LAST:event_jbExcluirActionPerformed
 
-    private void jbPesquisaarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaarActionPerformed
+    private void jbAvançarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAvançarActionPerformed
         matriculaControl.pesquisar();
-    }//GEN-LAST:event_jbPesquisaarActionPerformed
+    }//GEN-LAST:event_jbAvançarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -355,27 +325,30 @@ public class Chamada extends javax.swing.JInternalFrame {
     private java.util.List<model_domain.Aluno> alunoList1;
     private javax.persistence.Query alunoQuery;
     private javax.persistence.Query alunoQuery1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JCheckBox jCheckPresenc1;
+    private javax.swing.JCheckBox jCheckPresenc2;
+    private javax.swing.JCheckBox jCheckPresenc3;
+    private javax.swing.JCheckBox jCheckPresenc4;
+    private javax.swing.JCheckBox jCheckPresenc5;
+    private javax.swing.JCheckBox jCheckPresenc6;
+    private javax.swing.JComboBox<String> jComboTurma;
+    private javax.swing.JLabel jLNPresenca;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelAlunoSelec;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextNumAluno;
+    private javax.swing.JButton jbAvançar;
+    private javax.swing.JButton jbConfirma;
     private javax.swing.JButton jbExcluir;
-    private javax.swing.JButton jbNovo;
-    private javax.swing.JButton jbPesquisaar;
-    private javax.swing.JButton jbSalvar;
-    private javax.swing.JLabel jlbMatricula;
-    private javax.swing.JLabel jlbNmChamada;
-    private javax.swing.JLabel jlbNmatricula;
-    private javax.swing.JLabel jlbNomeAluno;
+    private javax.swing.JButton jbVoltar;
+    private javax.swing.JButton jjbRelatorio;
+    private javax.swing.JLabel jlbData;
     private javax.swing.JLabel jlbTurma;
-    private javax.swing.JPanel jpnTabela;
-    private javax.swing.JPanel jpnTabela1;
     private javax.swing.JPanel jpnbotoes;
-    private javax.swing.JTextField jtfDatMatricula;
+    private javax.swing.JTextField jtfData;
     private javax.swing.JPanel jtfDataMat;
-    private javax.swing.JTextField jtfNmatricula;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
