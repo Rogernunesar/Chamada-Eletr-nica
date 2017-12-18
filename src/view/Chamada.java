@@ -14,7 +14,7 @@ import model_Control.MatriculaControl;
  *
  * @author rogerio
  */
-public class CadastroMatriculaView extends javax.swing.JInternalFrame {
+public class Chamada extends javax.swing.JInternalFrame {
 
     private final MatriculaControl matriculaControl;
     private final AlunoControl alunoControl;
@@ -22,7 +22,7 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
     /**
      * Creates new form matriculaView
      */
-    public CadastroMatriculaView() {
+    public Chamada() {
         matriculaControl = new MatriculaControl();
         alunoControl = new AlunoControl();
         initComponents();
@@ -53,7 +53,6 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
         jbNovo = new javax.swing.JButton();
         jbSalvar = new javax.swing.JButton();
         jbExcluir = new javax.swing.JButton();
-        jbPesquisaar = new javax.swing.JButton();
         jtfDataMat = new javax.swing.JPanel();
         jlbNmatricula = new javax.swing.JLabel();
         jlbNomeAluno = new javax.swing.JLabel();
@@ -65,9 +64,11 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jbPesquisaar = new javax.swing.JButton();
         jpnTabela = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jpnTabela1 = new javax.swing.JPanel();
 
         setBorder(null);
@@ -97,13 +98,6 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbPesquisaar.setText("Pesquisar");
-        jbPesquisaar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbPesquisaarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jpnbotoesLayout = new javax.swing.GroupLayout(jpnbotoes);
         jpnbotoes.setLayout(jpnbotoesLayout);
         jpnbotoesLayout.setHorizontalGroup(
@@ -115,8 +109,6 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
                 .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jbPesquisaar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnbotoesLayout.setVerticalGroup(
@@ -126,8 +118,7 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
                 .addGroup(jpnbotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbNovo)
                     .addComponent(jbSalvar)
-                    .addComponent(jbExcluir)
-                    .addComponent(jbPesquisaar))
+                    .addComponent(jbExcluir))
                 .addContainerGap())
         );
 
@@ -164,6 +155,13 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.turma}"), jComboBox2, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
         bindingGroup.addBinding(binding);
 
+        jbPesquisaar.setText("Pesquisar");
+        jbPesquisaar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbPesquisaarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jtfDataMatLayout = new javax.swing.GroupLayout(jtfDataMat);
         jtfDataMat.setLayout(jtfDataMatLayout);
         jtfDataMatLayout.setHorizontalGroup(
@@ -186,12 +184,14 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
                         .addGap(59, 59, 59)
                         .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox1, 0, 241, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbPesquisaar))
                     .addGroup(jtfDataMatLayout.createSequentialGroup()
                         .addComponent(jlbMatricula)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jtfDatMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jtfDataMatLayout.setVerticalGroup(
             jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,7 +206,9 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbPesquisaar))
                     .addComponent(jlbNomeAluno))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -242,44 +244,68 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
 
         jScrollPane1.setViewportView(jTable1);
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout jpnTabelaLayout = new javax.swing.GroupLayout(jpnTabela);
         jpnTabela.setLayout(jpnTabelaLayout);
         jpnTabelaLayout.setHorizontalGroup(
             jpnTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnTabelaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                .addGap(60, 60, 60))
+            .addGroup(jpnTabelaLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnTabelaLayout.setVerticalGroup(
             jpnTabelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jpnTabelaLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(32, 32, 32))
         );
 
-        jpnTabela1.setLayout(null);
+        javax.swing.GroupLayout jpnTabela1Layout = new javax.swing.GroupLayout(jpnTabela1);
+        jpnTabela1.setLayout(jpnTabela1Layout);
+        jpnTabela1Layout.setHorizontalGroup(
+            jpnTabela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jpnTabela1Layout.setVerticalGroup(
+            jpnTabela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 173, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpnTabela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jpnbotoes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jtfDataMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                    .addComponent(jpnTabela1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jpnTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jpnbotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jtfDataMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpnbotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtfDataMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jpnTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpnTabela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpnTabela1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         bindingGroup.bind();
@@ -329,6 +355,7 @@ public class CadastroMatriculaView extends javax.swing.JInternalFrame {
     private java.util.List<model_domain.Aluno> alunoList1;
     private javax.persistence.Query alunoQuery;
     private javax.persistence.Query alunoQuery1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JScrollPane jScrollPane1;
