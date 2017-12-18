@@ -87,10 +87,10 @@ public class Chamada extends javax.swing.JInternalFrame {
 
         jlbData.setText("Data ");
 
-        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.alunoTabela}");
+        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.turmaTabela}");
         org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jComboTurma);
         bindingGroup.addBinding(jComboBoxBinding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.aluno}"), jComboTurma, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.turma}"), jComboTurma, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
         bindingGroup.addBinding(binding);
 
         jjbRelatorio.setText("Gerar Relátorio");
@@ -100,17 +100,17 @@ public class Chamada extends javax.swing.JInternalFrame {
         jtfDataMatLayout.setHorizontalGroup(
             jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jtfDataMatLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jlbTurma)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(34, 34, 34)
                 .addComponent(jlbData)
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
                 .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jjbRelatorio)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jtfDataMatLayout.setVerticalGroup(
             jtfDataMatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,17 +130,17 @@ public class Chamada extends javax.swing.JInternalFrame {
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cod_Matricula}"));
         columnBinding.setColumnName("Cod_ Matricula");
         columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${turma.nomeTurma}"));
-        columnBinding.setColumnName("Turma");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dataMatricula}"));
-        columnBinding.setColumnName("Data Matricula");
-        columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${num_chamada}"));
         columnBinding.setColumnName("Num_chamada");
         columnBinding.setColumnClass(Integer.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${aluno.nome}"));
         columnBinding.setColumnName("Aluno");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${turma.nomeTurma}"));
+        columnBinding.setColumnName("Serie");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${dataMatricula}"));
+        columnBinding.setColumnName("Data Matricula");
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaSelecionado}"), jTable1, org.jdesktop.beansbinding.BeanProperty.create("selectedElement"));
@@ -180,7 +180,13 @@ public class Chamada extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nº");
 
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.num_chamada}"), jTextNumAluno, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+
         jLabelAlunoSelec.setText("Aluno Selecionado ");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${matriculaControl.matriculaDigitado.aluno.nome}"), jTextField3, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
 
         jCheckPresenc1.setIconTextGap(8);
 
