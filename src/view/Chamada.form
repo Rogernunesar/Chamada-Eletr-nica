@@ -118,7 +118,7 @@
                   <Component id="jtfData" min="-2" pref="96" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jjbRelatorio" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="103" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -213,6 +213,11 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
               </TableColumnModel>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -237,9 +242,11 @@
                 <BindingParameter name="NAME" value="Serie"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
               </Subbinding>
-              <Subbinding sourcePath="${dataMatricula}">
+              <Subbinding sourcePath="null">
                 <BindingParameter name="NAME" value="Data Matricula"/>
-                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+              </Subbinding>
+              <Subbinding sourcePath="null">
+                <BindingParameter name="NAME" value="Faltas"/>
               </Subbinding>
             </BindingProperty>
             <BindingProperty name="selectedElement" source="Form" sourcePath="${matriculaControl.matriculaSelecionado}" target="jTable1" targetPath="selectedElement" updateStrategy="0" immediately="false">
@@ -317,11 +324,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextNumAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckPresenc1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jCheckPresenc1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField3" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jTextNumAluno" min="-2" max="-2" attributes="0"/>
                       <Component id="jCheckPresenc3" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jCheckPresenc4" min="-2" max="-2" attributes="0"/>
                       <Component id="jCheckPresenc5" min="-2" max="-2" attributes="0"/>
@@ -329,11 +334,13 @@
                       <Component id="jCheckPresenc2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jbConfirma" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jbVoltar" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbAvançar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jbAvançar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
